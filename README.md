@@ -6,7 +6,7 @@ Project-Based Internship Big Data Analytics, Kimia Farma x Rakamin Academy
 
 This project analyzes Kimia Farma's business performance from 2020 to 2023 using transaction, product, branch, and inventory data.
 
-The analysis was done in BigQuery, then the final analytical table was connected to Looker Studio for dashboard development.
+I used BigQuery to prepare the data, then connected the final analytical table to Looker Studio to build the dashboard.
 
 ## Objectives
 
@@ -42,7 +42,7 @@ The analysis was done in BigQuery, then the final analytical table was connected
 4. Connected `tabel_analisa` to Looker Studio.
 5. Built an interactive dashboard with date, province, city, branch, and product filters.
 
-The inventory table is still included in the project source data, but it is not used in the main analytical table for this dashboard.
+The inventory table is part of the source data, but it is not used in the main analytical table for this dashboard.
 
 ## SQL
 
