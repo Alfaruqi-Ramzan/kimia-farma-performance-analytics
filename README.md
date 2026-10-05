@@ -46,8 +46,9 @@ The SQL query used to create the main analytical table is available here:
 - [`tabel_analisa.sql`](./tabel_analisa.sql)
 
 ## Dashboard
+🔗 **[Open the interactive Looker Studio dashboard](https://datastudio.google.com/reporting/f9a0e337-f6df-469b-82f4-f61c9f039cbe)**
 
-The Looker Studio dashboard includes:
+The dashboard includes:
 - Performance KPI snapshot
 - Nett Sales by Province
 - Nett Sales Mix by Product
@@ -57,8 +58,6 @@ The Looker Studio dashboard includes:
 - Nett Profit by Province
 - Branch Rating Gap Analysis
 - Key Business Insights
-
-**Interactive dashboard:** public Looker Studio link will be added here.
 
 ## Key Insights
 - West Java contributes approximately **29.5%** of total Nett Sales, making it the largest contributing province.
