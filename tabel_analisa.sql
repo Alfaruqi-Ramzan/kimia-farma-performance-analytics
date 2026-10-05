@@ -1,4 +1,4 @@
--- Create the analytical table used in the dashboard
+-- analytical table for the dashboard
 CREATE OR REPLACE TABLE kimia_farma.tabel_analisa AS
 SELECT
   a.transaction_id,
@@ -14,7 +14,7 @@ SELECT
   d.price AS actual_price,
   a.discount_percentage,
 
-  -- Set the gross profit percentage based on product price
+  -- gross profit percentage based on product price
   CASE
     WHEN d.price <= 50000 THEN 0.10
     WHEN d.price <= 100000 THEN 0.15
@@ -23,10 +23,10 @@ SELECT
     ELSE 0.30
   END AS persentase_gross_laba,
 
-  -- Calculate Nett Sales after discount
+  -- nett sales after discount
   ROUND(d.price * (1 - a.discount_percentage), 0) AS nett_sales,
 
-  -- Calculate Nett Profit using the applicable gross profit percentage
+  -- nett profit based on the applicable gross profit percentage
   ROUND(
     (d.price * (1 - a.discount_percentage)) *
     CASE
