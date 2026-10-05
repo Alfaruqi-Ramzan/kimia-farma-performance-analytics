@@ -54,6 +54,10 @@ The query used to create the analytical table is available here:
 
 [Open the interactive Looker Studio dashboard](https://datastudio.google.com/reporting/f9a0e337-f6df-469b-82f4-f61c9f039cbe)
 
+### Dashboard Preview
+
+![Kimia Farma Performance Analytics Dashboard](./kimia_farma_dashboard.png)
+
 The dashboard includes:
 
 - KPI summary
