@@ -96,3 +96,5 @@ The presentation video will be added after the final presentation is completed.
 
 **Muhammad Alfaruqi Ramzan Mahrudin**  
 Mathematics Graduate, Universitas Pendidikan Indonesia
+
+[LinkedIn](https://www.linkedin.com/in/alfaruqiramzan/) | [GitHub](https://github.com/Alfaruqi-Ramzan)
