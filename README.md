@@ -1,55 +1,62 @@
 # Kimia Farma Performance Analytics (2020–2023)
 
-Project-Based Internship — Big Data Analytics, Kimia Farma x Rakamin Academy
+Project-Based Internship Big Data Analytics, Kimia Farma x Rakamin Academy
 
 ## Overview
-This project analyzes Kimia Farma's business performance from 2020 to 2023 using transaction, product, branch, and inventory datasets.
 
-The workflow covers data preparation in Google BigQuery, development of an analytical table, and an interactive business dashboard in Google Looker Studio.
+This project analyzes Kimia Farma's business performance from 2020 to 2023 using transaction, product, branch, and inventory data.
+
+The analysis was done in BigQuery, then the final analytical table was connected to Looker Studio for dashboard development.
 
 ## Objectives
-- Import and organize the four provided datasets in BigQuery.
-- Build a structured analytical table for business performance analysis.
-- Calculate gross profit margin tiers, Nett Sales, and Nett Profit at transaction level.
-- Analyze sales, transactions, profitability, geographic performance, product mix, and branch ratings.
-- Present the findings through an interactive Looker Studio dashboard.
 
-## Tools & Stack
-- **Google BigQuery** — data warehousing and SQL transformation
-- **Google Looker Studio** — dashboard development and data visualization
-- **GitHub** — SQL version control and project documentation
+- Import the provided datasets into BigQuery
+- Build one analytical table for dashboard analysis
+- Calculate gross profit percentage, Nett Sales, and Nett Profit
+- Analyze sales, transactions, profitability, product mix, geographic performance, and branch ratings
+- Present the results in an interactive Looker Studio dashboard
+
+## Tools
+
+- Google BigQuery
+- Google Looker Studio
+- GitHub
 
 ## Data Sources
 
 | Dataset | Description |
 |---|---|
-| `kf_final_transaction` | Transaction-level records including customer, date, price, discount, and transaction rating |
-| `kf_product` | Product master data including product name, category, and price |
-| `kf_kantor_cabang` | Branch master data including branch name, city, province, and branch rating |
+| `kf_final_transaction` | Transaction data including customer, date, price, discount, and transaction rating |
+| `kf_product` | Product data including product name, category, and price |
+| `kf_kantor_cabang` | Branch data including branch name, city, province, and branch rating |
 | `kf_inventory` | Inventory data by branch and product |
 
-## Workflow
-1. Imported all four raw datasets into BigQuery as individual tables.
-2. Built `tabel_analisa` for dashboard analysis by combining transaction, branch, and product data.
-3. Derived the following analytical fields:
-   - `persentase_gross_laba` — profit margin tier based on product price
-   - `nett_sales` — selling price after discount
-   - `nett_profit` — Nett Sales multiplied by the applicable gross profit percentage
-4. Connected `tabel_analisa` to Google Looker Studio.
-5. Built an interactive dashboard with filters for date, province, city, branch, and product.
+## Process
 
-> **Note:** The inventory dataset is imported and retained in BigQuery as part of the project source data. The current primary dashboard table uses transaction, branch, and product fields required for the performance analysis.
+1. Imported the four datasets into BigQuery.
+2. Created `tabel_analisa` by joining transaction, branch, and product data.
+3. Added calculated fields for:
+   - `persentase_gross_laba`
+   - `nett_sales`
+   - `nett_profit`
+4. Connected `tabel_analisa` to Looker Studio.
+5. Built an interactive dashboard with date, province, city, branch, and product filters.
 
-## SQL Script
-The SQL query used to create the main analytical table is available here:
+The inventory table is still included in the project source data, but it is not used in the main analytical table for this dashboard.
 
-- [`tabel_analisa.sql`](./tabel_analisa.sql)
+## SQL
+
+The query used to create the analytical table is available here:
+
+[`tabel_analisa.sql`](./tabel_analisa.sql)
 
 ## Dashboard
-🔗 **[Open the interactive Looker Studio dashboard](https://datastudio.google.com/reporting/f9a0e337-f6df-469b-82f4-f61c9f039cbe)**
+
+[Open the interactive Looker Studio dashboard](https://datastudio.google.com/reporting/f9a0e337-f6df-469b-82f4-f61c9f039cbe)
 
 The dashboard includes:
-- Performance KPI snapshot
+
+- KPI summary
 - Nett Sales by Province
 - Nett Sales Mix by Product
 - Nett Sales by Year
@@ -60,27 +67,32 @@ The dashboard includes:
 - Key Business Insights
 
 ## Key Insights
-- West Java contributes approximately **29.5%** of total Nett Sales, making it the largest contributing province.
-- The **Top 5 provinces contribute approximately 53.7%** of total Nett Sales, indicating a relatively concentrated geographic contribution.
-- Annual Nett Sales remained stable at around **Rp80B** throughout 2020–2023.
-- Profit Margin remained highly stable at approximately **28.4%** across the observed period.
-- Several branches with a Branch Rating of **5.0** still recorded lower Transaction Ratings, highlighting a gap between overall branch perception and transaction-level experience.
 
-## Dashboard Requirements Covered
-The dashboard was designed to address the project requirements, including:
+- West Java contributes around **29.5%** of total Nett Sales.
+- The Top 5 provinces contribute around **53.7%** of total Nett Sales.
+- Annual Nett Sales stayed around **Rp80B** from 2020 to 2023.
+- Profit Margin stayed close to **28.4%** during the same period.
+- Some branches with a Branch Rating of **5.0** still had lower Transaction Ratings.
+
+## Project Requirements
+
+The dashboard covers the main requirements from the project brief:
+
 - Dashboard title and summary
 - Filter controls
-- Performance snapshot
+- Snapshot data
 - Year-over-year revenue comparison
 - Top 10 transactions by province
 - Top 10 Nett Sales by province
-- Branch rating vs. transaction rating analysis
-- Indonesia geographic visualization of Nett Profit by province
-- Additional profitability and product-mix analysis
+- Branch rating and transaction rating analysis
+- Indonesia map for Nett Profit by province
+- Additional analysis for product mix and profitability
 
 ## Video Walkthrough
-Project presentation video will be added after the final presentation is completed.
+
+The presentation video will be added after the final presentation is completed.
 
 ## Author
+
 **Muhammad Alfaruqi Ramzan Mahrudin**  
-Mathematics Graduate — Universitas Pendidikan Indonesia
+Mathematics Graduate, Universitas Pendidikan Indonesia
