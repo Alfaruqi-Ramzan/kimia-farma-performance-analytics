@@ -56,12 +56,12 @@ The query used to create the analytical table is available here:
 
 ### Dashboard Preview
 
-![Kimia Farma Performance Analytics Dashboard](./kimia_farma_dashboard.png)
+![Kimia Farma Performance Analytics Dashboard](./Dashboard%20Kimia%20Farma.png)
 
 The dashboard includes:
 
 - KPI summary
-- Nett Sales by Province
+- Top 10 Nett Sales by Province
 - Nett Sales Mix by Product
 - Nett Sales by Year
 - Top 10 Provinces by Transactions
