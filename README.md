@@ -66,8 +66,8 @@ The dashboard includes:
 - Nett Sales by Year
 - Top 10 Provinces by Transactions
 - Profit Margin by Year
-- Nett Profit by Province
-- Branch Rating Gap Analysis
+- Indonesia Geo Map - Nett Profit by Province
+- Top 5 Branches: Highest Branch Rating & Lowest Transaction Rating
 - Key Business Insights
 
 ## Key Insights
@@ -75,8 +75,8 @@ The dashboard includes:
 - West Java contributes around **29.5%** of total Nett Sales.
 - The Top 5 provinces contribute around **53.7%** of total Nett Sales.
 - Annual Nett Sales stayed around **Rp80B** from 2020 to 2023.
-- Profit Margin stayed close to **28.4%** during the same period.
-- Some branches with a Branch Rating of **5.0** still had lower Transaction Ratings.
+- Profit Margin stayed close to **22.6%** during the same period.
+- Top-rated branches still show lower Transaction Ratings, with the leading branches recording Branch Ratings around **4.7–4.8** and Transaction Ratings around **4.0**.
 
 ## Project Requirements
 
@@ -88,8 +88,8 @@ The dashboard covers the main requirements from the project brief:
 - Year-over-year revenue comparison
 - Top 10 transactions by province
 - Top 10 Nett Sales by province
-- Branch rating and transaction rating analysis
-- Indonesia map for Nett Profit by province
+- Top 5 branches with the highest branch ratings and lower transaction ratings
+- Indonesia Geo Map for Nett Profit by province
 - Additional analysis for product mix and profitability
 
 ## Video Walkthrough
