@@ -17,25 +17,29 @@ SELECT
   -- gross profit percentage based on product price
   CASE
     WHEN d.price <= 50000 THEN 0.10
-    WHEN d.price <= 100000 THEN 0.15
-    WHEN d.price <= 300000 THEN 0.20
-    WHEN d.price <= 500000 THEN 0.25
-    ELSE 0.30
+    WHEN d.price > 50000 AND d.price <= 100000 THEN 0.15
+    WHEN d.price > 100000 AND d.price <= 300000 THEN 0.20
+    WHEN d.price > 300000 AND d.price <= 500000 THEN 0.25
+    WHEN d.price > 500000 THEN 0.30
   END AS persentase_gross_laba,
 
   -- nett sales after discount
   ROUND(d.price * (1 - a.discount_percentage), 0) AS nett_sales,
 
-  -- nett profit based on the applicable gross profit percentage
+  -- nett profit after gross profit and discount
   ROUND(
-    (d.price * (1 - a.discount_percentage)) *
-    CASE
-      WHEN d.price <= 50000 THEN 0.10
-      WHEN d.price <= 100000 THEN 0.15
-      WHEN d.price <= 300000 THEN 0.20
-      WHEN d.price <= 500000 THEN 0.25
-      ELSE 0.30
-    END
+    (
+      d.price *
+      CASE
+        WHEN d.price <= 50000 THEN 0.10
+        WHEN d.price > 50000 AND d.price <= 100000 THEN 0.15
+        WHEN d.price > 100000 AND d.price <= 300000 THEN 0.20
+        WHEN d.price > 300000 AND d.price <= 500000 THEN 0.25
+        WHEN d.price > 500000 THEN 0.30
+      END
+    )
+    - (d.price * a.discount_percentage),
+    0
   ) AS nett_profit,
 
   a.rating AS rating_transaksi
