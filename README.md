@@ -1,104 +1,103 @@
 # Kimia Farma Performance Analytics (2020–2023)
 
-Project-Based Internship Big Data Analytics, Kimia Farma x Rakamin Academy
+Big Data Analytics project completed as part of the Kimia Farma x Rakamin Academy Project-Based Internship.
 
-## Overview
+## Quick Access
 
-This project analyzes Kimia Farma's business performance from 2020 to 2023 using transaction, product, branch, and inventory data.
+[Interactive Dashboard](https://datastudio.google.com/reporting/f9a0e337-f6df-469b-82f4-f61c9f039cbe) · [Presentation PDF](./Kimia-Farma-Performance-Analytics-Presentation.pdf) · [SQL Query](./tabel_analisa.sql)
 
-I used BigQuery to prepare the data, then connected the final analytical table to Looker Studio to build the dashboard.
+## Project Overview
 
-## Objectives
+This project evaluates Kimia Farma's business performance from 2020 to 2023 using transaction, product, branch, and inventory data.
 
-- Import the provided datasets into BigQuery
-- Build one analytical table for dashboard analysis
-- Calculate gross profit percentage, Nett Sales, and Nett Profit
-- Analyze sales, transactions, profitability, product mix, geographic performance, and branch ratings
-- Present the results in an interactive Looker Studio dashboard
+The workflow covers data preparation in Google BigQuery, SQL transformation into a single analytical table, and interactive visualization in Google Looker Studio.
 
-## Tools
+## Business Questions
 
-- Google BigQuery
-- Google Looker Studio
-- GitHub
+- How did Nett Sales perform from 2020 to 2023?
+- Which provinces contributed the most sales and transactions?
+- How consistent was profitability across the period?
+- Which branches had strong Branch Ratings but relatively lower Transaction Ratings?
+- How were sales and profit distributed across products and regions?
 
 ## Data Sources
 
-| Dataset | Description |
+| Dataset | Main Information |
 |---|---|
-| `kf_final_transaction` | Transaction data including customer, date, price, discount, and transaction rating |
-| `kf_product` | Product data including product name, category, and price |
-| `kf_kantor_cabang` | Branch data including branch name, city, province, and branch rating |
-| `kf_inventory` | Inventory data by branch and product |
+| `kf_final_transaction` | Transaction, customer, date, price, discount, transaction rating |
+| `kf_product` | Product name, category, price |
+| `kf_kantor_cabang` | Branch name, city, province, branch rating |
+| `kf_inventory` | Inventory by branch and product |
 
-## Process
+> Note: `kf_inventory` was imported as part of the source data, but it is not used in the main analytical table because the required dashboard fields are derived from transaction, product, and branch data.
 
-1. Imported the four datasets into BigQuery.
-2. Created `tabel_analisa` by joining transaction, branch, and product data.
-3. Added calculated fields for:
-   - `persentase_gross_laba`
-   - `nett_sales`
-   - `nett_profit`
-4. Connected `tabel_analisa` to Looker Studio.
-5. Built an interactive dashboard with date, province, city, branch, and product filters.
+## Workflow
 
-The inventory table is part of the source data, but it is not used in the main analytical table for this dashboard.
+`CSV source data` → `BigQuery` → `tabel_analisa` → `Looker Studio` → `Business insights`
 
-## SQL
+### BigQuery Transformation
 
-The query used to create the analytical table is available here:
+The analytical table combines transaction, branch, and product information and adds:
 
-[`tabel_analisa.sql`](./tabel_analisa.sql)
+- `persentase_gross_laba`
+- `nett_sales`
+- `nett_profit`
+- `rating_cabang`
+- `rating_transaksi`
 
-## Dashboard
+The full transformation query is available in [`tabel_analisa.sql`](./tabel_analisa.sql).
 
-[Open the interactive Looker Studio dashboard](https://datastudio.google.com/reporting/f9a0e337-f6df-469b-82f4-f61c9f039cbe)
+## Dashboard Highlights
 
-### Dashboard Preview
-
-![Kimia Farma Performance Analytics Dashboard](./Dashboard%20Kimia%20Farma.png)
+| Metric | Result |
+|---|---:|
+| Nett Sales | Rp321.2B |
+| Total Transactions | 672,458 |
+| Total Customers | 264,601 |
+| Nett Profit | Rp72.6B |
+| Average Profit Margin | ~22.6% |
 
 The dashboard includes:
 
-- KPI summary
 - Top 10 Nett Sales by Province
 - Nett Sales Mix by Product
 - Nett Sales by Year
 - Top 10 Provinces by Transactions
 - Profit Margin by Year
-- Indonesia Geo Map - Nett Profit by Province
+- Nett Profit by Province
 - Top 5 Branches: Highest Branch Rating & Lowest Transaction Rating
-- Key Business Insights
+- Interactive filters for date, province, city, branch, and product
 
 ## Key Insights
 
 - West Java contributes around **29.5%** of total Nett Sales.
-- The Top 5 provinces contribute around **53.7%** of total Nett Sales.
-- Annual Nett Sales stayed around **Rp80B** from 2020 to 2023.
-- Profit Margin stayed close to **22.6%** during the same period.
-- Top-rated branches still show lower Transaction Ratings, with the leading branches recording Branch Ratings around **4.7–4.8** and Transaction Ratings around **4.0**.
+- The top 5 provinces contribute around **53.7%** of total Nett Sales.
+- Annual Nett Sales remained relatively stable at around **Rp80B per year**.
+- Profit Margin remained close to **22.6%** across the period.
+- Top-rated branches still show lower Transaction Ratings, indicating a gap between overall branch perception and transaction experience.
 
-## Project Requirements
+## Dashboard Preview
 
-The dashboard covers the main requirements from the project brief:
+![Kimia Farma Performance Analytics Dashboard](./dashboard-preview.png)
 
-- Dashboard title and summary
-- Filter controls
-- Snapshot data
-- Year-over-year revenue comparison
-- Top 10 transactions by province
-- Top 10 Nett Sales by province
-- Top 5 branches with the highest branch ratings and lower transaction ratings
-- Indonesia Geo Map for Nett Profit by province
-- Additional analysis for product mix and profitability
+## Repository Files
 
-## Video Walkthrough
+```text
+.
+├── dashboard-preview.png
+├── Kimia-Farma-Performance-Analytics-Presentation.pdf
+├── README.md
+└── tabel_analisa.sql
+```
 
-The presentation video will be added after the final presentation is completed.
+## Tools
+
+**Google BigQuery** · **SQL** · **Google Looker Studio** · **GitHub**
 
 ## Author
 
 **Muhammad Alfaruqi Ramzan Mahrudin**  
-Mathematics Graduate, Universitas Pendidikan Indonesia
+Mathematics Graduate, Universitas Pendidikan Indonesia  
+Data Analyst Support Intern, PT Cemerlang Statistika Indonesia (StatsMe)
 
-[LinkedIn](https://www.linkedin.com/in/alfaruqiramzan/) | [GitHub](https://github.com/Alfaruqi-Ramzan)
+[LinkedIn](https://www.linkedin.com/in/alfaruqiramzan/) · [GitHub](https://github.com/Alfaruqi-Ramzan)
